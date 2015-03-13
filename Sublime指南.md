@@ -42,7 +42,7 @@
 **安装php-cs-fixer**
 
     sudo wget http://get.sensiolabs.org/php-cs-fixer.phar -O /usr/local/bin/php-cs-fixer
-    sudo chmod a+x /usr/local/bin/php-cs-fixe
+    sudo chmod a+x /usr/local/bin/php-cs-fixer
 
 **安装scheck,这个可以不用装,这个是facabook提供的一个代码检查工具.**
 
