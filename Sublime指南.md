@@ -153,7 +153,7 @@ Project->Save Project As..
                         "app/cache/",
                         "build"
                 ],
-                "path": "/var/www/haoxue"
+                "path": "/var/www/project"
             }
         ]
     }
