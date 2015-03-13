@@ -17,6 +17,10 @@
     mysql -u root -p root
     create dabase edusoho
 
+**安装PHPMyAdmin**
+
+从[http://www.phpmyadmin.net/home_page/index.php](http://www.phpmyadmin.net/home_page/index.php)下载,解压到/var/www/目录下
+
 **安装EduSoho源码**
 
     cd /var/www
@@ -41,7 +45,7 @@
     sudo vim edusoho.conf
 
 添加以下配置
-    
+
     server {
         listen 80;
 
@@ -104,6 +108,36 @@
         }
     }
 
+配置phpmyadmin
+    
+    sudo vim phpmyadmin.conf
+
+添加以下配置:
+
+    server {
+      listen 80;
+      server_name  phpmyadmin;
+      access_log  /var/log/nginx/phpmyadmin-access.log;
+
+      root /var/www/phpMyAdmin;
+      location / {
+
+        index index.php;
+      }
+
+      location ~ \.php$ {
+        fastcgi_pass   unix:/var/run/php5-fpm.sock;
+        fastcgi_index  index.php;
+        fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+        include             fastcgi_params;
+      }
+
+      location ~ /\.ht {
+        deny  all;
+      }
+    }
+
+
 **修改fpm运行用户**
 
     sudo vim /etc/php5/fpm/pool.d/
@@ -121,8 +155,12 @@
     
     sudo vim /etc/hosts
 
-添加一行:`0.0.0.0    esdev.com`
+添加两行:
+
+    0.0.0.0    esdev.com
+    0.0.0.0    phpmyadmin
 
 **访问**
 
 [http://esdev.com](http://esdev.com)
+[http://phpmyadmin](http://phpmyadmin) 帐号root 密码root
