@@ -104,17 +104,39 @@
 * 客户定制新增功能，需增加数据库的，尽量通过加表的方式；如需加字段，请加字段前缀
 * 客户定制新功能的，通常在src/Custom目录下新增功能
 
-####GIT 分支命名####
+####GIT 规范####
 
-* BUG修复分支： bugfix/{ID}
-* 紧急修复分支： hotfix/{ID}
-* 特性功能分支： feature/{ID}-{feature_name}
-* 客户定制分支： custom/{ID}-{name}
+**规范１：**
 
-**GIT COMMIT规范**
+* 所有特性开发，均开分支feature/{id}-feature-short-name，{id}为特性的redmine任务号；
+* 所有bug修复，均开分支bugfix/{id}-bug-short-name，{id}为bug的redmine号。
 
-* 一次Commit，只做一件事情
-* Commit日志，要带上ISSURE编号，并简单说明
+**规范２：**
+
+* master为稳定分支，进入此分支的代码都必须经过review；
+* develop为下一个即将发布的版本开发分支，一旦版本开发完毕，转到release/{version}分支，进行最后的完善以及bug修复。
+
+**规范３：**
+
+* 所有bugix分支,feature分支开发完成后，需merge到developer分支时，都需在提交Gitlab中提交Merge Request进行Code Review；
+* release分支，需merge到master分支时，也需在Gitlab中提交Merge Requst，进行Code Review；
+* 首先由各组组长Code Review，再由Wellming Review；
+* Wellming的代码，由各组组长Review。
+
+**规范４：**
+
+* 新增的Service方法及类，需写单元测试；
+* 单元测试也纳入Code Review；
+* 需单元测试跑通后才能提交代码；
+* 测试集成一旦BUILD失败，请立即修复。
+
+**规范５：**
+
+* GIT COMMIT 日志，需写清楚本次提交的内容；
+* 一次COMMIT只做一件事情。
+
+单元测试文档：edusoho主目录/doc/test-unit.md
+持续集成地址：http://gitlab-ci.topxia.com/ ，使用Giltlab帐号可登录
 
 ####TWIG####
 
