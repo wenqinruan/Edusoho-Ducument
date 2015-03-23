@@ -125,6 +125,10 @@ phpmd规则:[http://phpmd.org/rules/index.html](http://phpmd.org/rules/index.htm
 #### 14. jQuery  在编写jQuery的时候，给出语法提示 ####
 直接用package control 安装.
 
+#### 15. less2css 将less编辑成css
+具体配置请看：
+http://www.qianduan.net/sublime-text-2-less2css-plugin-introduction.html
+
 ---------------------------
 
 # 其他 #
