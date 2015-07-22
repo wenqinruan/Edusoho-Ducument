@@ -16,7 +16,7 @@
  
 
 
-#### 2. HP CodeSniffer,比较强大的代码嗅探工具.####
+#### 2. PHP CodeSniffer,比较强大的代码嗅探工具.####
 
 **使用sublime的package control安装PHPCS.**
 
