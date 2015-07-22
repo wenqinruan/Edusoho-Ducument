@@ -237,7 +237,7 @@ Ctrl+;    goto word in current file. Same as Ctrl+P, then type #
 
 Ctrl+G    goto line in current file. Same as Ctrl+P, then type :
 
-F12       goto definition 这个很还有,可以导航到方法或者类定义的地方.  
+F12       goto definition 这个很有用,可以导航到方法或者类定义的地方.  
 
 **常用**
 
